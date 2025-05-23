@@ -1,0 +1,128 @@
+---
+---
+
+<section id="why-choose-us" class="section why-choose-section">
+  <div class="container">
+    <h2 class="section-title">Why Choose Us</h2>
+    <div class="why-choose-grid">
+      <div class="why-choose-item">
+        <div class="why-choose-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+          </svg>
+        </div>
+        <h3>Industry Compliance</h3>
+        <p>Adhering to strict protocols for government, healthcare, and legal sectors, ensuring all deliveries meet regulatory requirements.</p>
+      </div>
+      
+      <div class="why-choose-item">
+        <div class="why-choose-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+          </svg>
+        </div>
+        <h3>Proactive Issue Resolution</h3>
+        <p>Our team anticipates and addresses potential challenges before they affect your deliveries, ensuring smooth operations.</p>
+      </div>
+      
+      <div class="why-choose-item">
+        <div class="why-choose-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="16 12 12 8 8 12"></polyline>
+            <line x1="12" y1="16" x2="12" y2="8"></line>
+          </svg>
+        </div>
+        <h3>Strategic Nationwide Coverage</h3>
+        <p>Our extensive network ensures we can reach every corner of Malaysia efficiently, even remote locations.</p>
+      </div>
+      
+      <div class="why-choose-item">
+        <div class="why-choose-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+          </svg>
+        </div>
+        <h3>Secure Document Handling</h3>
+        <p>State-of-the-art security measures for confidential documents, protecting your sensitive information at all times.</p>
+      </div>
+      
+      <div class="why-choose-item">
+        <div class="why-choose-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+        </div>
+        <h3>Community Engagement</h3>
+        <p>We're committed to giving back to the communities we serve through various initiatives and sustainable practices.</p>
+      </div>
+      
+      <div class="why-choose-item">
+        <div class="why-choose-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+          </svg>
+        </div>
+        <h3>Dedicated Customer Support</h3>
+        <p>Our responsive team is available to address your queries and concerns promptly, ensuring a seamless experience.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .why-choose-section {
+    background-color: var(--color-light-gray);
+  }
+  
+  .why-choose-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  
+  .why-choose-item {
+    background-color: var(--color-white);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .why-choose-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+  }
+  
+  .why-choose-icon {
+    background-color: rgba(237, 28, 36, 0.1);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    color: var(--color-primary);
+  }
+  
+  .why-choose-item h3 {
+    margin-bottom: 1rem;
+  }
+  
+  .why-choose-item p {
+    margin-bottom: 0;
+    color: var(--color-text-light);
+  }
+  
+  @media (max-width: 768px) {
+    .why-choose-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

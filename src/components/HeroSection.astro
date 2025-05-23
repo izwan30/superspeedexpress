@@ -1,0 +1,127 @@
+---
+---
+
+<section id="hero" class="hero">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="hero-content">
+      <h1 class="hero-title">Fast. Reliable. Nationwide.</h1>
+      <p class="hero-subtitle">Experience seamless logistics with Super Speed Express. Real-time tracking. Same-day delivery. Dedicated support.</p>
+      <a href="#contact" class="btn btn-primary btn-large">Get a Quote Now</a>
+    </div>
+  </div>
+  <div class="scroll-indicator">
+    <a href="#about">
+      <span class="mouse">
+        <span class="wheel"></span>
+      </span>
+    </a>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    background-image: url('https://images.pexels.com/photos/4391470/pexels-photo-4391470.jpeg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    color: var(--color-white);
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6));
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    animation: fadeIn 1s ease-out;
+  }
+  
+  .hero-title {
+    color: var(--color-white);
+    margin-bottom: 1rem;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .hero-subtitle {
+    color: var(--color-white);
+    font-size: clamp(1.1rem, 3vw, 1.5rem);
+    margin-bottom: 2rem;
+    max-width: 80%;
+    line-height: 1.4;
+  }
+  
+  .scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+  }
+  
+  .mouse {
+    width: 26px;
+    height: 42px;
+    border: 2px solid var(--color-white);
+    border-radius: 13px;
+    display: block;
+    position: relative;
+  }
+  
+  .wheel {
+    background-color: var(--color-white);
+    width: 4px;
+    height: 8px;
+    border-radius: 2px;
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: scroll 2s infinite;
+  }
+  
+  @keyframes scroll {
+    0% {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(-50%) translateY(15px);
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .hero-content {
+      text-align: center;
+      padding: 0 1rem;
+    }
+    
+    .hero-subtitle {
+      max-width: 100%;
+    }
+  }
+</style>

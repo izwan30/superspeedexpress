@@ -1,0 +1,143 @@
+---
+const faqs = [
+  {
+    question: "Do you offer same-day delivery outside Klang Valley?",
+    answer: "We offer various flexible delivery options, including same-day, overnight, and scheduled deliveries nationwide. Same-day delivery is available in Klang Valley and major cities, with next-day options for other locations."
+  },
+  {
+    question: "Is real-time tracking available?",
+    answer: "Yes, all deliveries include real-time tracking for full visibility. Our advanced tracking system allows you to monitor your package's journey from pickup to delivery through our customer portal or mobile app."
+  },
+  {
+    question: "Do you handle legal and healthcare documents?",
+    answer: "Absolutely. Our secure handling protocol ensures confidentiality and industry compliance. We have specialized teams trained to handle sensitive documents with proper security measures in place."
+  },
+  {
+    question: "Can I customize logistics solutions for my business?",
+    answer: "Yes! We offer fully customizable services tailored to your industry needs. Our logistics experts will work with you to design a solution that addresses your specific requirements and challenges."
+  },
+  {
+    question: "What payment methods do you accept?",
+    answer: "We accept various payment methods including credit/debit cards, bank transfers, and online payment platforms. For corporate clients, we also offer monthly billing options with detailed invoicing."
+  },
+  {
+    question: "How do I schedule a pickup?",
+    answer: "You can schedule a pickup through our website, mobile app, or by calling our customer service hotline. We aim to provide flexible pickup windows to accommodate your schedule."
+  }
+];
+---
+
+<section id="faq" class="section faq-section">
+  <div class="container">
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <div class="faq-container">
+      {faqs.map((faq, index) => (
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" aria-controls={`faq-answer-${index}`}>
+            {faq.question}
+            <span class="faq-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-answer" id={`faq-answer-${index}`} hidden>
+            <p>{faq.answer}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const faqButtons = document.querySelectorAll('.faq-question');
+    
+    faqButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const expanded = button.getAttribute('aria-expanded') === 'true';
+        
+        // Close all other FAQs
+        faqButtons.forEach(otherButton => {
+          if (otherButton !== button) {
+            otherButton.setAttribute('aria-expanded', 'false');
+            const otherAnswerId = otherButton.getAttribute('aria-controls');
+            const otherAnswer = document.getElementById(otherAnswerId);
+            if (otherAnswer) {
+              otherAnswer.hidden = true;
+            }
+          }
+        });
+        
+        // Toggle current FAQ
+        button.setAttribute('aria-expanded', (!expanded).toString());
+        const answerId = button.getAttribute('aria-controls');
+        const answer = document.getElementById(answerId);
+        if (answer) {
+          answer.hidden = expanded;
+        }
+      });
+    });
+  });
+</script>
+
+<style>
+  .faq-section {
+    background-color: var(--color-light-gray);
+  }
+  
+  .faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .faq-item {
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    background-color: var(--color-white);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+  }
+  
+  .faq-question {
+    width: 100%;
+    background-color: var(--color-white);
+    border: none;
+    padding: 1.25rem;
+    text-align: left;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+  }
+  
+  .faq-question:hover {
+    background-color: rgba(237, 28, 36, 0.05);
+  }
+  
+  .faq-icon {
+    transform: rotate(0);
+    transition: transform 0.3s ease;
+  }
+  
+  .faq-question[aria-expanded="true"] .faq-icon {
+    transform: rotate(180deg);
+  }
+  
+  .faq-question[aria-expanded="true"] {
+    border-bottom: 1px solid var(--color-medium-gray);
+  }
+  
+  .faq-answer {
+    padding: 0 1.25rem 1.25rem;
+    color: var(--color-text-light);
+  }
+  
+  .faq-answer p {
+    margin-bottom: 0;
+  }
+</style>

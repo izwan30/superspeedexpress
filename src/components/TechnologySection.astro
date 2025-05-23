@@ -1,0 +1,102 @@
+---
+---
+
+<section id="technology" class="section tech-section">
+  <div class="container">
+    <h2 class="section-title">Technology Highlights</h2>
+    <div class="tech-grid">
+      <div class="tech-item">
+        <div class="tech-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="8 12 12 16 16 12"></polyline>
+            <line x1="12" y1="8" x2="12" y2="16"></line>
+          </svg>
+        </div>
+        <div class="tech-content">
+          <h3>Real-Time Tracking</h3>
+          <p>Stay informed with live tracking for every delivery. Monitor your packages in real-time from pickup to delivery, giving you complete visibility and peace of mind.</p>
+        </div>
+      </div>
+      
+      <div class="tech-item">
+        <div class="tech-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+            <line x1="8" y1="21" x2="16" y2="21"></line>
+            <line x1="12" y1="17" x2="12" y2="21"></line>
+          </svg>
+        </div>
+        <div class="tech-content">
+          <h3>Customer Portal & App</h3>
+          <p>Seamless database access, updates, and proof of delivery at your fingertips. Our user-friendly platform gives you control over your logistics operations from any device.</p>
+        </div>
+      </div>
+      
+      <div class="tech-item">
+        <div class="tech-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path>
+            <path d="M22 12A10 10 0 0 0 12 2v10z"></path>
+          </svg>
+        </div>
+        <div class="tech-content">
+          <h3>Customized Reporting</h3>
+          <p>Gain valuable insights from site visitations and deliveries. Our detailed analytics and customizable reports help you make data-driven decisions to optimize your operations.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .tech-section {
+    background-color: var(--color-black);
+    color: var(--color-white);
+  }
+  
+  .tech-section .section-title {
+    color: var(--color-white);
+  }
+  
+  .tech-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+  
+  .tech-item {
+    display: flex;
+    gap: 2rem;
+    position: relative;
+  }
+  
+  .tech-icon {
+    color: var(--color-primary);
+    flex-shrink: 0;
+  }
+  
+  .tech-content h3 {
+    color: var(--color-white);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+  }
+  
+  .tech-content p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.1rem;
+    margin-bottom: 0;
+  }
+  
+  @media (max-width: 768px) {
+    .tech-item {
+      flex-direction: column;
+      text-align: center;
+      gap: 1rem;
+    }
+    
+    .tech-icon {
+      margin: 0 auto;
+    }
+  }
+</style>

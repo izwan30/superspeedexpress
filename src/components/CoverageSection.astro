@@ -1,0 +1,184 @@
+---
+---
+
+<section id="coverage" class="section coverage-section">
+  <div class="container">
+    <h2 class="section-title">Coverage Area</h2>
+    <div class="coverage-content">
+      <div class="coverage-map">
+        <img src="https://t4.ftcdn.net/jpg/03/48/91/89/360_F_348918939_6rvC9WP4Bn7pSg3JfyCvzZBBw4BYU4nR.jpg" alt="Malaysia map" class="map-image" />
+      </div>
+      <div class="coverage-text">
+        <p class="coverage-description">We provide nationwide coverage, including remote locations, with logistics hubs in major urban centers. Wherever your business is – we've got you covered.</p>
+        <div class="coverage-regions">
+          <div class="region">
+            <h3>Peninsular Malaysia</h3>
+            <ul>
+              <li>Kuala Lumpur</li>
+              <li>Selangor</li>
+              <li>Penang</li>
+              <li>Johor</li>
+              <li>Perak</li>
+              <li>And more...</li>
+            </ul>
+          </div>
+          <div class="region">
+            <h3>East Malaysia</h3>
+            <ul>
+              <li>Sabah</li>
+              <li>Sarawak</li>
+              <li>Remote areas</li>
+            </ul>
+          </div>
+        </div>
+        <div class="delivery-times">
+          <div class="delivery-time">
+            <div class="delivery-time-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+            </div>
+            <div class="delivery-time-info">
+              <h4>Same Day</h4>
+              <p>Klang Valley and major cities</p>
+            </div>
+          </div>
+          <div class="delivery-time">
+            <div class="delivery-time-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+            </div>
+            <div class="delivery-time-info">
+              <h4>Next Day</h4>
+              <p>Throughout Peninsular Malaysia</p>
+            </div>
+          </div>
+          <div class="delivery-time">
+            <div class="delivery-time-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+            </div>
+            <div class="delivery-time-info">
+              <h4>2-3 Days</h4>
+              <p>East Malaysia and remote areas</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .coverage-section {
+    background-color: var(--color-light-gray);
+  }
+  
+  .coverage-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .map-image {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: var(--shadow-md);
+  }
+  
+  .coverage-description {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .coverage-regions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .region h3 {
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+  }
+  
+  .region ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .region li {
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 1.5rem;
+  }
+  
+  .region li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+    font-weight: bold;
+  }
+  
+  .delivery-times {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    background-color: var(--color-white);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .delivery-time {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .delivery-time-icon {
+    background-color: rgba(237, 28, 36, 0.1);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+  }
+  
+  .delivery-time-info h4 {
+    margin-bottom: 0.25rem;
+    font-size: 1.1rem;
+  }
+  
+  .delivery-time-info p {
+    margin-bottom: 0;
+    color: var(--color-text-light);
+  }
+  
+  @media (min-width: 768px) {
+    .coverage-content {
+      grid-template-columns: 1fr 1fr;
+    }
+    
+    .delivery-times {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .coverage-regions {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
