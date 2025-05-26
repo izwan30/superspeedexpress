@@ -15,15 +15,25 @@
           <span class="bar"></span>
           <span class="bar"></span>
         </button>
-        <ul class="nav-menu">
-          <li><a href="#about" class="nav-link">About</a></li>
-          <li><a href="#services" class="nav-link">Services</a></li>
-          <li><a href="#technology" class="nav-link">Technology</a></li>
-          <li><a href="#why-choose-us" class="nav-link">Why Us</a></li>
-          <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
-          <li><a href="#coverage" class="nav-link">Coverage</a></li>
-          <li><a href="#contact" class="nav-link contact-link">Get a Quote</a></li>
-        </ul>
+        <div class="nav-overlay">
+          <div class="nav-menu">
+            <button class="close-menu" aria-label="Close menu">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
+            <ul class="menu-items">
+              <li><a href="#about" class="nav-link">About</a></li>
+              <li><a href="#services" class="nav-link">Services</a></li>
+              <li><a href="#technology" class="nav-link">Technology</a></li>
+              <li><a href="#why-choose-us" class="nav-link">Why Us</a></li>
+              <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+              <li><a href="#coverage" class="nav-link">Coverage</a></li>
+              <li><a href="#contact" class="nav-link contact-link">Get a Quote</a></li>
+            </ul>
+          </div>
+        </div>
       </nav>
     </div>
   </div>
@@ -32,19 +42,22 @@
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const menuToggle = document.querySelector('.menu-toggle');
-    const navMenu = document.querySelector('.nav-menu');
-    
-    menuToggle?.addEventListener('click', () => {
-      menuToggle.classList.toggle('active');
-      navMenu?.classList.toggle('active');
-    });
-    
-    // Close menu when a nav link is clicked
+    const closeMenu = document.querySelector('.close-menu');
+    const navOverlay = document.querySelector('.nav-overlay');
     const navLinks = document.querySelectorAll('.nav-link');
+    
+    const toggleMenu = () => {
+      navOverlay?.classList.toggle('active');
+      document.body.style.overflow = navOverlay?.classList.contains('active') ? 'hidden' : '';
+    };
+    
+    menuToggle?.addEventListener('click', toggleMenu);
+    closeMenu?.addEventListener('click', toggleMenu);
+    
     navLinks.forEach(link => {
       link.addEventListener('click', () => {
-        menuToggle?.classList.remove('active');
-        navMenu?.classList.remove('active');
+        navOverlay?.classList.remove('active');
+        document.body.style.overflow = '';
       });
     });
     
@@ -107,37 +120,6 @@
     align-items: center;
   }
   
-  .nav-menu {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .nav-link {
-    display: block;
-    padding: 0.5rem 1rem;
-    color: var(--color-black);
-    font-weight: 600;
-    transition: color 0.3s ease;
-  }
-  
-  .nav-link:hover {
-    color: var(--color-primary);
-  }
-  
-  .contact-link {
-    background-color: var(--color-primary);
-    color: var(--color-white);
-    border-radius: 4px;
-    margin-left: 0.5rem;
-  }
-  
-  .contact-link:hover {
-    background-color: var(--color-primary-dark);
-    color: var(--color-white);
-  }
-  
   .menu-toggle {
     display: none;
     flex-direction: column;
@@ -148,6 +130,7 @@
     border: none;
     cursor: pointer;
     padding: 0;
+    z-index: 1001;
   }
   
   .bar {
@@ -158,49 +141,111 @@
     transition: all 0.3s ease;
   }
   
+  .nav-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--color-white);
+    transition: right 0.3s ease;
+    z-index: 1000;
+  }
+  
+  .nav-overlay.active {
+    right: 0;
+  }
+  
+  .close-menu {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    color: var(--color-black);
+  }
+  
+  .menu-items {
+    list-style: none;
+    padding: 4rem 2rem;
+    margin: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .nav-link {
+    display: block;
+    color: var(--color-black);
+    font-size: 1.25rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-link:hover {
+    color: var(--color-primary);
+  }
+  
+  .contact-link {
+    display: inline-block;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    margin-top: 1rem;
+    text-align: center;
+  }
+  
+  .contact-link:hover {
+    background-color: var(--color-primary-dark);
+    color: var(--color-white);
+  }
+  
+  @media (min-width: 993px) {
+    .nav-overlay {
+      display: block;
+      position: static;
+      width: auto;
+      height: auto;
+      background: none;
+    }
+    
+    .menu-items {
+      padding: 0;
+      flex-direction: row;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    
+    .nav-link {
+      font-size: 1rem;
+    }
+    
+    .contact-link {
+      margin-top: 0;
+    }
+    
+    .close-menu {
+      display: none;
+    }
+  }
+  
   @media (max-width: 992px) {
     .menu-toggle {
       display: flex;
     }
     
-    .nav-menu {
-      position: fixed;
-      top: 0;
-      right: -100%;
-      width: 100%;
-      height: 100vh;
-      background-color: var(--color-white);
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      transition: right 0.3s ease;
-      gap: 2rem;
-    }
-    
-    .nav-menu.active {
-      right: 0;
+    .nav-overlay {
+      display: block;
     }
     
     .nav-link {
       font-size: 1.5rem;
-      padding: 1rem;
-    }
-    
-    .menu-toggle.active .bar:nth-child(1) {
-      transform: translateY(9px) rotate(45deg);
-    }
-    
-    .menu-toggle.active .bar:nth-child(2) {
-      opacity: 0;
-    }
-    
-    .menu-toggle.active .bar:nth-child(3) {
-      transform: translateY(-9px) rotate(-45deg);
-    }
-    
-    .contact-link {
-      margin: 0;
-      padding: 1rem 2rem;
     }
   }
 
