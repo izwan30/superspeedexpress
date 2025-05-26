@@ -76,6 +76,14 @@
     
     window.addEventListener('scroll', handleScroll);
     handleScroll();
+
+    // Hide mobile menu on window resize if switching to desktop view
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 992 && mobileMenu?.classList.contains('active')) {
+        mobileMenu.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
   });
 </script>
 
@@ -128,6 +136,10 @@
     }
     
     .menu-toggle {
+      display: none;
+    }
+    
+    .mobile-menu {
       display: none;
     }
     
