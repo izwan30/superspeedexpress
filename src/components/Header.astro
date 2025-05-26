@@ -61,7 +61,6 @@
     };
     
     window.addEventListener('scroll', handleScroll);
-    // Initial check
     handleScroll();
   });
 </script>
@@ -75,7 +74,7 @@
     z-index: 1000;
     transition: all 0.3s ease;
     padding: 1rem 0;
-    background-color: transparent;
+    background-color: var(--color-white);
   }
   
   .header.scrolled {
@@ -111,7 +110,8 @@
   .nav-menu {
     display: flex;
     list-style: none;
-    transition: all 0.3s ease;
+    margin: 0;
+    padding: 0;
   }
   
   .nav-link {
@@ -147,6 +147,7 @@
     background: transparent;
     border: none;
     cursor: pointer;
+    padding: 0;
   }
   
   .bar {
@@ -164,15 +165,16 @@
     
     .nav-menu {
       position: fixed;
+      top: 0;
       right: -100%;
-      top: 70px;
-      flex-direction: column;
-      background-color: var(--color-white);
       width: 100%;
-      text-align: center;
-      box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
-      transition: 0.3s;
-      padding: 2rem 0;
+      height: 100vh;
+      background-color: var(--color-white);
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: right 0.3s ease;
+      gap: 2rem;
     }
     
     .nav-menu.active {
@@ -180,12 +182,12 @@
     }
     
     .nav-link {
-      margin: 1.5rem 0;
-      font-size: 1.2rem;
+      font-size: 1.5rem;
+      padding: 1rem;
     }
     
     .menu-toggle.active .bar:nth-child(1) {
-      transform: rotate(-45deg) translate(-5px, 6px);
+      transform: translateY(9px) rotate(45deg);
     }
     
     .menu-toggle.active .bar:nth-child(2) {
@@ -193,12 +195,12 @@
     }
     
     .menu-toggle.active .bar:nth-child(3) {
-      transform: rotate(45deg) translate(-5px, -6px);
+      transform: translateY(-9px) rotate(-45deg);
     }
     
     .contact-link {
-      margin: 0 auto;
-      display: inline-block;
+      margin: 0;
+      padding: 1rem 2rem;
     }
   }
 
